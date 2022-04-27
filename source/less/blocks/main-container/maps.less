@@ -1,5 +1,19 @@
+.maps__wrapper {
+  width: 320px;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    width: 768px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1440px;
+  }
+}
+
 .maps__adress {
   display: flex;
+  justify-content: center;
 }
 
 .maps__title {
@@ -10,6 +24,11 @@
   line-height: 20px;
   text-transform: uppercase;
   color: #111111;
+  width: 139px;
+
+  @media (min-width: @tablet-width) {
+    width: 172px;
+  }
 }
 
 .maps__adress--text {
@@ -19,4 +38,9 @@
   font-size: 14px;
   line-height: 20px;
   color: #444444;
+  width: 139px;
+
+  @media (min-width: @tablet-width) {
+    width: 172px;
+  }
 }
