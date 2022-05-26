@@ -1,25 +1,125 @@
 .visually-hidden {
   display: none;
 }
+
 .main-header {
   display: flex;
+  flex-direction: column;
+  min-width: 320px;
   height: 65px;
   color: rgba(0, 0, 0, 1);
   background-color: rgb(255, 255, 255);
 
   @media (min-width: @tablet-width) {
     height: 75px;
+    min-width: 768px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     margin: 0 auto;
-    width: 600px;
   }
 
   @media (min-width: @desktop-width) {
     height: 110px;
-    width: 1220px;
+    width: auto;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+.main-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 320px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  @media (min-width: @tablet-width) {
+    margin: 0;
+    margin-left: 30px;
+    min-width: 171px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-left: 110px;
+    min-width: 202px;
+  }
+}
+
+.main-nav__wrapper {
+  @media (min-width: @tablet-width) {
+    margin-right: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-right: 110px;
+  }
+}
+
+.main-nav {
+  position: relative;
+  width: auto;
+}
+
+.main-nav__toggle {
+  position: absolute;
+  width: 24px;
+  height: 19px;
+  right: 20px;
+  top: -24px;
+  z-index: 2;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  width: 24px;
+  height: 2px;
+  background-color: #000000;
+  box-shadow: 0 8px 0 0 #000000, 0 16px 0 0 #000000;
+}
+
+.main-nav--opened .main-nav__toggle {
+  top: -25px;
+  right: auto;
+  left: -45px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 18px;
+    width: 24px;
+    height: 2px;
+    background-color: #000000;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:active::before,
+  &:active::after {
+    background-color: fade(#ffffff, 30%);
+  }
+}
+
+@media (max-width: @mobile-width-only) {
+  .site-list {
+    display: none;
   }
 }
 
@@ -27,24 +127,103 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
+  background-color: #ffffff;
+
+  @media (min-width: @tablet-width) {
+    width: 440px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 478px;
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 
+
+.site-list__item {
+  border: 2px solid #68b738;
+
+  @media (min-width: @tablet-width) {
+    border: none;
+
+    &--active {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background: #68b738;
+      }
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    border: none;
+  }
+  margin-right: 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+
+.main-nav__item:hover {
+      opacity: 0.6;
+      color: #e60e0e;
+    }
+
+.main-nav__item:active {
+  opacity: 0.3;
+}
+
+
 .main-nav__list a {
+  position: relative;
+  display: block;
   color: #000000;
+  padding-top: 22px;
+  padding-bottom: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+
+  @media (min-width: @tablet-width) {
+    padding-bottom: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-bottom: 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    padding: 0;
+  }
 }
 
 @media (min-width: @tablet-width) {
-  .site-list {
-    width: 440px;
-  }
-
   .main-nav__toggle {
     display: none;
   }
 }
 
-@media (min-width: @desktop-width) {
-  .site-list {
-    width: 440px;
-  }
-}

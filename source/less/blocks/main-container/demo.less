@@ -1,16 +1,14 @@
 .demo__wrapper {
   margin: 0 auto;
   padding: 0 20px;
+  width: auto;
 
-  @media (min-width: @tablet-width)
-  {
-    margin: 0 auto;
+  @media (min-width: @tablet-width) {
     margin: 0 30px;
-    padding: 0 ;
+    padding-top: 43px;
   }
 
   @media (min-width: @desktop-width) {
-    margin: 0 auto;
     margin: 0 110px;
     padding: 0;
     display: flex;
@@ -24,7 +22,13 @@
 .demo__stats {
   @media (min-width: @tablet-width) {
     display: flex;
+    margin-top: 54px;
+
+    @media (min-width: @desktop-width) {
+      margin-top: 69px;
+    }
   }
+
   @media (min-width: @desktop-width) {
     display: flex;
     flex-direction: column;
@@ -39,22 +43,50 @@
   line-height: 40px;
   color: #000000;
 
+  @media (min-width: @tablet-width) {
+    margin: 0;
+    margin-top: 23px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;
+  }
 }
 
 .demo__description {
-  margin: 0 auto;
+  margin-right: 0;
+  margin-left: 0;
   font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   color: #444444;
-  width: 280px;
+
   @media (min-width: @tablet-width) {
     width: 708px;
+    margin: 0;
+    margin-top: 63px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
   }
+
   @media (min-width: @desktop-width) {
+    margin-top: 146px;
     width: 436px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
@@ -62,22 +94,55 @@
 .demo__stats--become {
   display: flex;
   justify-content: center;
+
+  @media (min-width: @desktop-width) {
+    justify-content: start;
+  }
 }
 
 .demo__weight,
 .demo__day {
   width: 124px;
+  height: 56px;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+
   @media (min-width: @tablet-width) {
     width: 162px;
+    height: 72px;
   }
+}
+
+.demo__day {
+  margin-left: 30px;
 }
 
 .demo__spent {
   margin: 0 auto;
+  margin-top: 30px;
   width: 250px;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 0;
+    margin-top: 0;
+    width: auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+    margin-top: 60px;
+    margin-bottom: 75px;
+    flex-direction: row;
+    justify-content: start;
+  }
 }
 
 .demo_text {
+  margin: 0 auto;
+  margin-top: 15px;
   font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -85,6 +150,15 @@
   line-height: 24px;
   text-align: center;
   color: #000000;
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+    margin-left: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+  }
 }
 
 .demo__littel-text {
@@ -97,6 +171,10 @@
   display: flex;
   align-items: center;
   text-align: center;
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+  }
 }
 
 .demo__spent-left {
@@ -108,15 +186,60 @@
   text-align: center;
   text-transform: uppercase;
   color: #000000;
+
+  @media (min-width: @desktop-width) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.demo__spent-right {
+  @media (min-width: @tablet-width) {
+    margin-top: 9px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+    margin-left: 63px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.demo-images {
+  margin: 0 auto;
+  width: 100%;
+
+  @media (min-width: @desktop-width) {
+    width: 550px;
+    height: 480px;
+  }
 }
 
 .demo__buttons-block {
   display: flex;
+  justify-content: center;
+
+  @media (min-width: @desktop-width) {
+    margin-top: 25px;
+    margin-bottom: 65px;
+  }
 }
+
 
 .demo__block--right {
   margin: 0 auto;
-  width: 210px;
+  margin-top: 35px;
 }
 
 .demo__progres--button {
@@ -129,4 +252,14 @@
   text-align: center;
   text-transform: uppercase;
   color: #000000;
+}
+
+.range {
+  @media (min-width: @tablet-width) {
+    width: 426px;
+    height: 6px;
+    background: #dcdcdc;
+    border-radius: 6px;
+    border: none;
+  }
 }
